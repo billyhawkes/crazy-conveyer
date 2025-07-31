@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8thehv1woo4s"]
+[gd_scene load_steps=5 format=3 uid="uid://c8thehv1woo4s"]
 
 [ext_resource type="Script" uid="uid://cdfla3r2u631f" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://hud.gd" id="2_e2o6t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2o6t"]
 albedo_color = Color(0.14148505, 0.5218948, 3.080368e-06, 1)
@@ -29,3 +30,41 @@ transform = Transform3D(0.50928175, 0.74197495, -0.4360107, 0, 0.5066358, 0.8621
 [node name="TrackContainer" type="Node3D" parent="."]
 
 [node name="ItemContainer" type="Node3D" parent="."]
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_e2o6t")
+
+[node name="MoneyPanel" type="Panel" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -67.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MoneyLabel" type="Label" parent="HUD/MoneyPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "$0"
+horizontal_alignment = 2
+vertical_alignment = 1

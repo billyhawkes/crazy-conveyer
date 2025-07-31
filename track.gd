@@ -19,6 +19,12 @@ const TRACK_POSITIONS: Array[Vector3] = [
 	Vector3(1.0, 0.0, 0.0),
 ]
 
+var is_origin := false
+var processing = {
+	"time": 0.5,
+	"value": 1
+}
+
 func _ready() -> void:
 	var index = get_index()
 	global_position = TRACK_POSITIONS[index] * 2

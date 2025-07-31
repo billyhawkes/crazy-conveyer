@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5lifti2svflr"]
+
+[ext_resource type="Script" uid="uid://cf7n6ufpt4f2x" path="res://indicator.gd" id="1_sgcln"]
+
+[node name="Indicator" type="Node3D"]
+script = ExtResource("1_sgcln")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 1, 0)
+text = "+1"
+font_size = 64
