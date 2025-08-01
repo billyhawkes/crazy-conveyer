@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cne1vytdqkooy"]
 
-[ext_resource type="Script" uid="uid://dmfai8t6fgtgx" path="res://item.gd" id="1_tnite"]
+[ext_resource type="Script" uid="uid://dmfai8t6fgtgx" path="res://scenes/item.gd" id="1_tnite"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vpy52"]
 

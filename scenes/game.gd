@@ -22,4 +22,3 @@ func spawn_item() -> void:
 	var tracks = track_container.get_children()
 	var item = Item.create(tracks[0])
 	item_container.add_child(item)
-	

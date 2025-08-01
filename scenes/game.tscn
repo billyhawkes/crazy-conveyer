@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8thehv1woo4s"]
 
-[ext_resource type="Script" uid="uid://cdfla3r2u631f" path="res://game.gd" id="1_e2o6t"]
-[ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://hud.gd" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://cdfla3r2u631f" path="res://scenes/game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://scenes/hud.gd" id="2_e2o6t"]
 [ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_feb5d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2o6t"]
@@ -119,6 +119,24 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 
+[node name="LoopUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Loop Bonus"
+
+[node name="LoopLabel" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"
+
+[node name="LoopButton" type="Button" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$10"
+
 [node name="ItemContainer" type="Node3D" parent="."]
 
 [node name="TrackContainer" type="Node3D" parent="."]
@@ -141,3 +159,4 @@ transform = Transform3D(0.50928175, 0.74197495, -0.4360107, 0, 0.5066358, 0.8621
 
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]
+[connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade/LoopButton" to="HUD" method="_on_loop_button_pressed"]

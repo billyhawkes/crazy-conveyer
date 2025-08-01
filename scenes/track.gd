@@ -27,10 +27,18 @@ const TRACK_POSITIONS: Array[Vector3] = [
 	Vector3(1.0, 0.0, 0.0),
 ]
 
+
+
 var level = {
 	"speed": 1,
 	"value": 1
 }
+
+var max_levels = {
+	"speed": 9,
+	"value": 100
+}
+
 
 var active = false
 
@@ -47,6 +55,10 @@ func render_ui() -> void:
 	value_label.text = str("$", processing.value)
 	speed_button.text = str("$", get_upgrade_cost().speed)
 	value_button.text = str("$", get_upgrade_cost().value)
+	if max_levels.speed == level.speed:
+		speed_button.visible = false
+	if max_levels.value == level.value:
+		value_button.visible = false
 	
 func get_value():
 	return {

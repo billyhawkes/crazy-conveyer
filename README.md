@@ -19,3 +19,12 @@ Start with one tracks and unlock more
 ### Global
 - [ ] Total items (1 -> 1 per track)
 - [ ] Track speed
+
+### Tasks
+- [x] Max levels
+- [x] Min speed should be 0.1
+- [ ] Improve art
+- [ ] Main menu
+- [ ] Prevent overlapping items
+- [ ] Music
+- [ ] Sound effects (processing, cash, button)

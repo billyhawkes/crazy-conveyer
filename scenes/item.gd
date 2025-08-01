@@ -35,6 +35,12 @@ func process_item() -> void:
 	
 	var indicator = Indicator.create(indicator_text)
 	add_child(indicator)
+	
+	if current_track.get_index() == 0:
+		Globals.money += Globals.get_value().loop
+		await get_tree().create_timer(0.2).timeout
+		var loop_indicator = Indicator.create(str("$", Globals.get_value().loop))
+		add_child(loop_indicator)
 	await get_tree().create_timer(processing.speed).timeout
 	processed = true
 	
