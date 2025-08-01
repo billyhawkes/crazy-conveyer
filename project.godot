@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Crazy Conveyor"
-run/main_scene="uid://c8thehv1woo4s"
+run/main_scene="uid://dogcyvust6705"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -28,7 +28,7 @@ gdscript/warnings/unused_signal=0
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
 [input]

@@ -10,21 +10,27 @@
 Done by pressing on a track
 
 ### Track
-- [ ] Processing time
-- [ ] Value
+- Speed
+- Value
 
 ### Unlocking more tracks
 Start with one tracks and unlock more
 
 ### Global
-- [ ] Total items (1 -> 1 per track)
-- [ ] Track speed
+- Total items (1 -> 1 per track)
+- Track speed
+- Loop bonus
 
 ### Tasks
 - [x] Max levels
 - [x] Min speed should be 0.1
-- [ ] Improve art
+- [x] UI
+- [x] Improve art
 - [ ] Main menu
+- [ ] Saving state
 - [ ] Prevent overlapping items
+- [ ] Prestiging (at what point?)
 - [ ] Music
 - [ ] Sound effects (processing, cash, button)
+- [ ] Play testing
+- [ ] Objectives? Levels?

@@ -1,13 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8thehv1woo4s"]
+[gd_scene load_steps=10 format=3 uid="uid://c8thehv1woo4s"]
 
 [ext_resource type="Script" uid="uid://cdfla3r2u631f" path="res://scenes/game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://scenes/hud.gd" id="2_e2o6t"]
 [ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_feb5d"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2o6t"]
-albedo_color = Color(0.14148505, 0.5218948, 3.080368e-06, 1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_lnu2h"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lnu2h"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lbhrr"]
+noise = SubResource("FastNoiseLite_lnu2h")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iywne"]
+sky_cover = SubResource("NoiseTexture2D_lbhrr")
+
+[sub_resource type="Sky" id="Sky_p57ef"]
+sky_material = SubResource("ProceduralSkyMaterial_iywne")
 
 [sub_resource type="Environment" id="Environment_e2o6t"]
+background_mode = 2
+sky = SubResource("Sky_p57ef")
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_e2o6t")
@@ -20,6 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("3_feb5d")
 script = ExtResource("2_e2o6t")
 
 [node name="MoneyPanel" type="Panel" parent="HUD"]
@@ -29,8 +42,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -224.0
-offset_top = -67.0
+offset_left = -320.0
+offset_top = -120.0
 offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 0
@@ -46,7 +59,7 @@ offset_left = 10.0
 offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "$0"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -54,9 +67,10 @@ vertical_alignment = 1
 [node name="UpgradeMenu" type="Control" parent="HUD"]
 custom_minimum_size = Vector2(500, 300)
 layout_mode = 1
-offset_right = 500.0
-offset_bottom = 300.0
-theme = ExtResource("3_feb5d")
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 520.0
+offset_bottom = 320.0
 
 [node name="Panel" type="Panel" parent="HUD/UpgradeMenu"]
 layout_mode = 1
@@ -141,21 +155,25 @@ text = "$10"
 
 [node name="TrackContainer" type="Node3D" parent="."]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 4)
-size = Vector3(30, 1, 30)
-material = SubResource("StandardMaterial3D_e2o6t")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 8.5, 8, 8.5)
 projection = 1
 size = 12.0
+near = 2.0
+far = 21.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(26.996927, 0, 0, 0, 1.0000011, 0, 0, 0, 25.777443, 3.27137, -1.9073486e-06, 2.7992525)
+mesh = SubResource("PlaneMesh_lnu2h")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_e2o6t")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.50928175, 0.74197495, -0.4360107, 0, 0.5066358, 0.8621602, 0.8605999, -0.43908247, 0.25802037, 0, 7.247781, 0)
+transform = Transform3D(-0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, 0.49999997, -0.49999997, 0, 7.247781, 0)
+light_energy = 0.1
+light_cull_mask = 4293918722
+shadow_enabled = true
 
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]

@@ -27,7 +27,7 @@ const TRACK_POSITIONS: Array[Vector3] = [
 	Vector3(1.0, 0.0, 0.0),
 ]
 
-
+@export var custom_position = false
 
 var level = {
 	"speed": 1,
@@ -44,7 +44,8 @@ var active = false
 
 func _ready() -> void:
 	var index = get_index()
-	global_position = TRACK_POSITIONS[index] * 2
+	if !custom_position:
+		global_position = TRACK_POSITIONS[index] * 2
 	upgrade_menu.visible = false
 	render_ui()
 
@@ -80,9 +81,12 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 		
 func _process(_delta: float) -> void:
 	if upgrade_menu.visible:
-		scale = Vector3(1.1, 1.1, 1.1)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "scale", Vector3(1.1, 1.1, 1.1), 0.08).set_trans(Tween.TRANS_BOUNCE)
 	else:
-		scale = Vector3(1.0, 1.0, 1.0)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "scale", Vector3(1.0, 1.0, 1.0), 0.08).set_trans(Tween.TRANS_BOUNCE)
+
 
 func _on_close_button_pressed() -> void:
 	active = false

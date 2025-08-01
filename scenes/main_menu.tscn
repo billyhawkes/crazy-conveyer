@@ -1,0 +1,241 @@
+[gd_scene load_steps=13 format=3 uid="uid://dogcyvust6705"]
+
+[ext_resource type="PackedScene" uid="uid://kmmopcj4rtju" path="res://scenes/track.tscn" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://c4mhhwatoxtxy" path="res://scenes/main_menu.gd" id="1_wu84c"]
+[ext_resource type="PackedScene" uid="uid://cne1vytdqkooy" path="res://scenes/item.tscn" id="2_ekxnf"]
+[ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_bqqt6"]
+[ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="5_8ln24"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vue75"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vue75"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lbhrr"]
+noise = SubResource("FastNoiseLite_vue75")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l6cm7"]
+sky_cover = SubResource("NoiseTexture2D_lbhrr")
+
+[sub_resource type="Sky" id="Sky_p57ef"]
+sky_material = SubResource("ProceduralSkyMaterial_l6cm7")
+
+[sub_resource type="Environment" id="Environment_ekxnf"]
+background_mode = 2
+sky = SubResource("Sky_p57ef")
+
+[sub_resource type="FontVariation" id="FontVariation_rtw2f"]
+base_font = ExtResource("5_8ln24")
+variation_opentype = {
+2003265652: 500
+}
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_wu84c")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 8, 8.5)
+projection = 1
+size = 12.0
+near = 2.0
+far = 21.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(26.996927, 0, 0, 0, 1.0000011, 0, 0, 0, 25.777443, 3.27137, -1.9073486e-06, 2.7992525)
+mesh = SubResource("PlaneMesh_vue75")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ekxnf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, 0.49999997, -0.49999997, 0, 7.247781, 0)
+light_energy = 0.1
+light_cull_mask = 4293918722
+shadow_enabled = true
+
+[node name="Item" parent="." node_paths=PackedStringArray("current_track") instance=ExtResource("2_ekxnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -6)
+current_track = NodePath("../TrackContainer/Track")
+game_enabled = false
+
+[node name="TrackContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.17392)
+
+[node name="Track" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+custom_position = true
+
+[node name="Track2" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+custom_position = true
+
+[node name="Track3" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+custom_position = true
+
+[node name="Track4" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+custom_position = true
+
+[node name="Track5" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+custom_position = true
+
+[node name="Track6" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+custom_position = true
+
+[node name="Track7" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+custom_position = true
+
+[node name="Track8" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+custom_position = true
+
+[node name="Track9" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+custom_position = true
+
+[node name="Track10" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+custom_position = true
+
+[node name="Track11" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+custom_position = true
+
+[node name="Track12" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
+custom_position = true
+
+[node name="Track13" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+custom_position = true
+
+[node name="Track14" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
+custom_position = true
+
+[node name="Track15" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 10)
+custom_position = true
+
+[node name="Track16" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 12)
+custom_position = true
+
+[node name="Track18" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 14)
+custom_position = true
+
+[node name="Track19" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 14)
+custom_position = true
+
+[node name="Track20" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 14)
+custom_position = true
+
+[node name="Track21" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 14)
+custom_position = true
+
+[node name="Track22" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 14)
+custom_position = true
+
+[node name="Track23" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 14)
+custom_position = true
+
+[node name="Track24" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 14)
+custom_position = true
+
+[node name="Track25" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 14)
+custom_position = true
+
+[node name="Track26" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 14)
+custom_position = true
+
+[node name="Track27" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 14)
+custom_position = true
+
+[node name="Track28" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 12)
+custom_position = true
+
+[node name="Track29" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 10)
+custom_position = true
+
+[node name="Track30" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 8)
+custom_position = true
+
+[node name="Track31" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 6)
+custom_position = true
+
+[node name="Track33" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 4)
+custom_position = true
+
+[node name="Track34" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 2)
+custom_position = true
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_bqqt6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -711.5
+offset_top = -329.5
+offset_right = 711.5
+offset_bottom = 249.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="HUD/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_rtw2f")
+theme_override_font_sizes/font_size = 180
+text = "Crazy Conveyor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HUD/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="HUD/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="HUD/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[connection signal="pressed" from="HUD/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HUD/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

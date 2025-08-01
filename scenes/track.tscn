@@ -17,12 +17,13 @@ mesh = ExtResource("1_mll3j")
 shape = SubResource("ConcavePolygonShape3D_phvr8")
 
 [node name="UpgradeMenu" type="Control" parent="."]
-custom_minimum_size = Vector2(500, 300)
 layout_mode = 3
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -300.0
-offset_right = 500.0
+offset_left = 20.0
+offset_top = -270.0
+offset_right = 520.0
+offset_bottom = -20.0
 grow_vertical = 0
 theme = ExtResource("3_bcvet")
 
@@ -57,7 +58,7 @@ text = "Track"
 
 [node name="CloseButton" type="Button" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/Header"]
 layout_mode = 2
-text = "X"
+text = " - "
 
 [node name="SpeedUpgrade" type="HBoxContainer" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2

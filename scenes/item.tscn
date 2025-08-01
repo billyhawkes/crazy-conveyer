@@ -8,5 +8,5 @@
 script = ExtResource("1_tnite")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.95119, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.831403, 0)
 mesh = SubResource("BoxMesh_vpy52")
