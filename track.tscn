@@ -1,11 +1,102 @@
-[gd_scene load_steps=3 format=3 uid="uid://kmmopcj4rtju"]
+[gd_scene load_steps=5 format=3 uid="uid://kmmopcj4rtju"]
 
 [ext_resource type="ArrayMesh" uid="uid://c51wanx2n6f4t" path="res://assets/meshes/track.res" id="1_mll3j"]
 [ext_resource type="Script" uid="uid://b1yhqhf3e7uv7" path="res://track.gd" id="1_phvr8"]
+[ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_bcvet"]
 
-[node name="Track" type="Node3D"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_phvr8"]
+data = PackedVector3Array(1, 0.4297, -1, -0.95519996, 0.4303, -0.95519996, -1, 0.4297, -1, 1, 0.4297, -1, 0.95519996, 0.4303, -0.95519996, -0.95519996, 0.4303, -0.95519996, 1, 0, 1, -1, 0.4297, 1, 1, 0.4297, 1, 1, 0, 1, -1, 0, 1, -1, 0.4297, 1, -1, 0, 1, -1, 0.4297, -1, -1, 0.4297, 1, -1, 0, 1, -1, 0, -1, -1, 0.4297, -1, -1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 0, -1, 1, 0.4297, 1, 1, 0.4297, -1, 1, 0, -1, 1, 0, 1, 1, 0.4297, 1, -1, 0, -1, 1, 0.4297, -1, -1, 0.4297, -1, -1, 0, -1, 1, 0, -1, 1, 0.4297, -1, 1, 0.45999998, -1, -1, 0.5308, -1, -1, 0.45999998, -1, 1, 0.45999998, -1, 1, 0.5308, -1, -1, 0.5308, -1, 1, 0.45999998, 1, -0.95519996, 0.45929998, 0.95519996, -1, 0.45999998, 1, 1, 0.45999998, 1, 0.95519996, 0.45929998, 0.95519996, -0.95519996, 0.45929998, 0.95519996, -1, 0.45999998, 1, -0.95519996, 0.45929998, -0.95519996, -1, 0.45999998, -1, -1, 0.45999998, 1, -0.95519996, 0.45929998, 0.95519996, -0.95519996, 0.45929998, -0.95519996, 1, 0.4297, 1, 0.95519996, 0.4303, -0.95519996, 1, 0.4297, -1, 1, 0.4297, 1, 0.95519996, 0.4303, 0.95519996, 0.95519996, 0.4303, -0.95519996, 1, 0.45999998, 1, 1, 0.5308, -1, 1, 0.45999998, -1, 1, 0.45999998, 1, 1, 0.5308, 1, 1, 0.5308, -1, 0.955, 0.5758, -0.955, -0.955, 0.5758, 0.955, -0.955, 0.5758, -0.955, 0.955, 0.5758, -0.955, 0.955, 0.5758, 0.955, -0.955, 0.5758, 0.955, -1, 0.45999998, -1, -1, 0.5308, 1, -1, 0.45999998, 1, -1, 0.45999998, -1, -1, 0.5308, -1, -1, 0.5308, 1, 0.95519996, 0.4303, -0.95519996, -0.95519996, 0.45929998, -0.95519996, -0.95519996, 0.4303, -0.95519996, 0.95519996, 0.4303, -0.95519996, 0.95519996, 0.45929998, -0.95519996, -0.95519996, 0.45929998, -0.95519996, -0.95519996, 0.4303, 0.95519996, 0.95519996, 0.45929998, 0.95519996, 0.95519996, 0.4303, 0.95519996, -0.95519996, 0.4303, 0.95519996, -0.95519996, 0.45929998, 0.95519996, 0.95519996, 0.45929998, 0.95519996, -0.95519996, 0.4303, -0.95519996, -0.95519996, 0.45929998, 0.95519996, -0.95519996, 0.4303, 0.95519996, -0.95519996, 0.4303, -0.95519996, -0.95519996, 0.45929998, -0.95519996, -0.95519996, 0.45929998, 0.95519996, 0.95519996, 0.4303, 0.95519996, 0.95519996, 0.45929998, -0.95519996, 0.95519996, 0.4303, -0.95519996, 0.95519996, 0.4303, 0.95519996, 0.95519996, 0.45929998, 0.95519996, 0.95519996, 0.45929998, -0.95519996, -1, 0.4297, 1, 0.95519996, 0.4303, 0.95519996, 1, 0.4297, 1, -1, 0.4297, 1, -0.95519996, 0.4303, 0.95519996, 0.95519996, 0.4303, 0.95519996, -1, 0.45999998, -1, 0.95519996, 0.45929998, -0.95519996, 1, 0.45999998, -1, -1, 0.45999998, -1, -0.95519996, 0.45929998, -0.95519996, 0.95519996, 0.45929998, -0.95519996, 1, 0.45999998, -1, 0.95519996, 0.45929998, 0.95519996, 1, 0.45999998, 1, 1, 0.45999998, -1, 0.95519996, 0.45929998, -0.95519996, 0.95519996, 0.45929998, 0.95519996, -1, 0.4297, -1, -0.95519996, 0.4303, 0.95519996, -1, 0.4297, 1, -1, 0.4297, -1, -0.95519996, 0.4303, -0.95519996, -0.95519996, 0.4303, 0.95519996, 0.955, 0.5758, 0.955, -0.9722, 0.57229996, 0.9722, -0.955, 0.5758, 0.955, 0.955, 0.5758, 0.955, 0.9722, 0.57229996, 0.9722, -0.9722, 0.57229996, 0.9722, 0.9722, 0.57229996, 0.9722, -0.98679996, 0.56259996, 0.98679996, -0.9722, 0.57229996, 0.9722, 0.9722, 0.57229996, 0.9722, 0.98679996, 0.56259996, 0.98679996, -0.98679996, 0.56259996, 0.98679996, 0.98679996, 0.56259996, 0.98679996, -0.9966, 0.548, 0.9966, -0.98679996, 0.56259996, 0.98679996, 0.98679996, 0.56259996, 0.98679996, 0.9966, 0.548, 0.9966, -0.9966, 0.548, 0.9966, 0.9966, 0.548, 0.9966, -1, 0.5308, 1, -0.9966, 0.548, 0.9966, 0.9966, 0.548, 0.9966, 1, 0.5308, 1, -1, 0.5308, 1, 0.955, 0.5758, -0.955, 0.9722, 0.57229996, 0.9722, 0.955, 0.5758, 0.955, 0.955, 0.5758, -0.955, 0.9722, 0.57229996, -0.9722, 0.9722, 0.57229996, 0.9722, 0.9722, 0.57229996, -0.9722, 0.98679996, 0.56259996, 0.98679996, 0.9722, 0.57229996, 0.9722, 0.9722, 0.57229996, -0.9722, 0.98679996, 0.56259996, -0.98679996, 0.98679996, 0.56259996, 0.98679996, 0.98679996, 0.56259996, -0.98679996, 0.9966, 0.548, 0.9966, 0.98679996, 0.56259996, 0.98679996, 0.98679996, 0.56259996, -0.98679996, 0.9966, 0.548, -0.9966, 0.9966, 0.548, 0.9966, 0.9966, 0.548, -0.9966, 1, 0.5308, 1, 0.9966, 0.548, 0.9966, 0.9966, 0.548, -0.9966, 1, 0.5308, -1, 1, 0.5308, 1, -0.955, 0.5758, 0.955, -0.9722, 0.57229996, -0.9722, -0.955, 0.5758, -0.955, -0.955, 0.5758, 0.955, -0.9722, 0.57229996, 0.9722, -0.9722, 0.57229996, -0.9722, -0.9722, 0.57229996, 0.9722, -0.98679996, 0.56259996, -0.98679996, -0.9722, 0.57229996, -0.9722, -0.9722, 0.57229996, 0.9722, -0.98679996, 0.56259996, 0.98679996, -0.98679996, 0.56259996, -0.98679996, -0.98679996, 0.56259996, 0.98679996, -0.9966, 0.548, -0.9966, -0.98679996, 0.56259996, -0.98679996, -0.98679996, 0.56259996, 0.98679996, -0.9966, 0.548, 0.9966, -0.9966, 0.548, -0.9966, -0.9966, 0.548, 0.9966, -1, 0.5308, -1, -0.9966, 0.548, -0.9966, -0.9966, 0.548, 0.9966, -1, 0.5308, 1, -1, 0.5308, -1, -0.955, 0.5758, -0.955, 0.9722, 0.57229996, -0.9722, 0.955, 0.5758, -0.955, -0.955, 0.5758, -0.955, -0.9722, 0.57229996, -0.9722, 0.9722, 0.57229996, -0.9722, -0.9722, 0.57229996, -0.9722, 0.98679996, 0.56259996, -0.98679996, 0.9722, 0.57229996, -0.9722, -0.9722, 0.57229996, -0.9722, -0.98679996, 0.56259996, -0.98679996, 0.98679996, 0.56259996, -0.98679996, -0.98679996, 0.56259996, -0.98679996, 0.9966, 0.548, -0.9966, 0.98679996, 0.56259996, -0.98679996, -0.98679996, 0.56259996, -0.98679996, -0.9966, 0.548, -0.9966, 0.9966, 0.548, -0.9966, -0.9966, 0.548, -0.9966, 1, 0.5308, -1, 0.9966, 0.548, -0.9966, -0.9966, 0.548, -0.9966, -1, 0.5308, -1, 1, 0.5308, -1, -1, 0.45999998, 1, 1, 0.5308, 1, 1, 0.45999998, 1, -1, 0.45999998, 1, -1, 0.5308, 1, 1, 0.5308, 1)
+
+[node name="Track" type="StaticBody3D"]
 script = ExtResource("1_phvr8")
 
 [node name="Track" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = ExtResource("1_mll3j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_phvr8")
+
+[node name="UpgradeMenu" type="Control" parent="."]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 3
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_right = 500.0
+grow_vertical = 0
+theme = ExtResource("3_bcvet")
+
+[node name="Panel" type="Panel" parent="UpgradeMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UpgradeMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UpgradeMenu/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Track"
+
+[node name="CloseButton" type="Button" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/Header"]
+layout_mode = 2
+text = "X"
+
+[node name="SpeedUpgrade" type="HBoxContainer" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed"
+
+[node name="SpeedLabel" type="Label" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"
+
+[node name="SpeedButton" type="Button" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$10"
+
+[node name="ValueUpgrade" type="HBoxContainer" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/ValueUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Value"
+
+[node name="ValueLabel" type="Label" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/ValueUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"
+
+[node name="ValueButton" type="Button" parent="UpgradeMenu/Panel/MarginContainer/VBoxContainer/ValueUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$10"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="UpgradeMenu/Panel/MarginContainer/VBoxContainer/Header/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="." method="_on_speed_button_pressed"]
+[connection signal="pressed" from="UpgradeMenu/Panel/MarginContainer/VBoxContainer/ValueUpgrade/ValueButton" to="." method="_on_value_button_pressed"]

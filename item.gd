@@ -5,12 +5,10 @@ const ITEM = preload("uid://cne1vytdqkooy")
 
 var current_track: Track
 
-var value := 0
-
 var processed := true
 
-func _process(delta: float) -> void:
-	if processed:
+func _process(_delta: float) -> void:
+	if processed: 
 		var track_length = 12
 		var next_track_index = current_track.get_index() + 1
 		if next_track_index == track_length:
@@ -23,25 +21,21 @@ func _ready() -> void:
 
 func update_track(new_track: Track) -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", new_track.position, Globals.tick_length).set_trans(Tween.TRANS_SINE)
-	tween.tween_callback(process_item).set_delay(Globals.tick_length)
+	tween.tween_property(self, "position", new_track.position, Globals.get_value().speed).set_trans(Tween.TRANS_SINE)
+	tween.tween_callback(process_item).set_delay(Globals.get_value().speed)
 	current_track = new_track
 	
 func process_item() -> void:
 	var indicator_text: String = ""
-	if current_track.is_origin:
-		Globals.money += value
-		Events.items.sold.emit(value)
-		indicator_text = str("$", value)
-		value = 0
-	else:
-		value += current_track.processing.value
-		Events.items.processed.emit(current_track.processing.value)
-		indicator_text = str("$", current_track.processing.value)
-		
+	var processing = current_track.get_value()
+	Globals.money += processing.value
+	Events.items.processed.emit(processing.value)
+	Events.game.money_changed.emit()
+	indicator_text = str("$", processing.value)
+	
 	var indicator = Indicator.create(indicator_text)
 	add_child(indicator)
-	await get_tree().create_timer(current_track.processing.time).timeout
+	await get_tree().create_timer(processing.speed).timeout
 	processed = true
 	
 static func create(track: Track) -> Item:

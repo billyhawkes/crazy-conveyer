@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8thehv1woo4s"]
+[gd_scene load_steps=6 format=3 uid="uid://c8thehv1woo4s"]
 
 [ext_resource type="Script" uid="uid://cdfla3r2u631f" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://hud.gd" id="2_e2o6t"]
+[ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_feb5d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2o6t"]
 albedo_color = Color(0.14148505, 0.5218948, 3.080368e-06, 1)
@@ -11,26 +12,6 @@ albedo_color = Color(0.14148505, 0.5218948, 3.080368e-06, 1)
 [node name="Game" type="Node3D"]
 script = ExtResource("1_e2o6t")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 4)
-size = Vector3(30, 1, 30)
-material = SubResource("StandardMaterial3D_e2o6t")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 8.5, 8, 8.5)
-projection = 1
-size = 12.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_e2o6t")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.50928175, 0.74197495, -0.4360107, 0, 0.5066358, 0.8621602, 0.8605999, -0.43908247, 0.25802037, 0, 7.247781, 0)
-
-[node name="TrackContainer" type="Node3D" parent="."]
-
-[node name="ItemContainer" type="Node3D" parent="."]
-
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -38,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_e2o6t")
 
 [node name="MoneyPanel" type="Panel" parent="HUD"]
@@ -68,3 +50,94 @@ theme_override_font_sizes/font_size = 32
 text = "$0"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="UpgradeMenu" type="Control" parent="HUD"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+offset_right = 500.0
+offset_bottom = 300.0
+theme = ExtResource("3_feb5d")
+
+[node name="Panel" type="Panel" parent="HUD/UpgradeMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/UpgradeMenu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+text = "Upgrades"
+
+[node name="SpeedUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed"
+
+[node name="SpeedLabel" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"
+
+[node name="SpeedButton" type="Button" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$10"
+
+[node name="ItemsUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Items"
+
+[node name="ItemsLabel" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Value"
+
+[node name="ItemsButton" type="Button" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$10"
+
+[node name="ItemContainer" type="Node3D" parent="."]
+
+[node name="TrackContainer" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 4)
+size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_e2o6t")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 8.5, 8, 8.5)
+projection = 1
+size = 12.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e2o6t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.50928175, 0.74197495, -0.4360107, 0, 0.5066358, 0.8621602, 0.8605999, -0.43908247, 0.25802037, 0, 7.247781, 0)
+
+[connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
+[connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]

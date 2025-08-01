@@ -1,7 +1,11 @@
 extends Node
 
 var items = ItemEvents.new()
+var game = GameEvents.new()
 
 class ItemEvents:
 	signal processed(value: int)
-	signal sold(value: int)
+	signal create
+
+class GameEvents:
+	signal money_changed

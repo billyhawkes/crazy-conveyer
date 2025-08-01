@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dmcn8ld0wnxje"]
+
+[ext_resource type="StyleBox" uid="uid://bfunvbp86sblr" path="res://interface/box.tres" id="1_qajdk"]
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/styles/disabled = ExtResource("1_qajdk")
+Button/styles/focus = ExtResource("1_qajdk")
+Button/styles/hover = ExtResource("1_qajdk")
+Button/styles/normal = ExtResource("1_qajdk")
+Button/styles/pressed = ExtResource("1_qajdk")
+HBoxContainer/constants/separation = 20
+Label/font_sizes/font_size = 32
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+VBoxContainer/constants/separation = 20
