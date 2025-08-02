@@ -49,6 +49,7 @@ func _on_speed_button_pressed() -> void:
 	if Globals.money >= cost:
 		Globals.money -= cost
 		Globals.levels.speed += 1
+		Events.game.speed_changed.emit(Globals.levels.speed)
 		Events.game.money_changed.emit()
 		render_ui()
 

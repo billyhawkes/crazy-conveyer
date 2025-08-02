@@ -35,8 +35,8 @@ Start with one tracks and unlock more
 - [x] Test very large money
 - [x] Fix loop not updating money label
 - [x] Balancing
+- [x] Prestiging (after 6 items)
 - [ ] Change background pace based on global speed
-- [ ] Prestiging (after 6 items, items are prestige points)
 - [ ] Music
 - [ ] Sound effects (processing, cash, button)
 - [ ] Mute music/sounds buttons

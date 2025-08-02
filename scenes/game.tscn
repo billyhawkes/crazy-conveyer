@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://scenes/hud.gd" id="2_e2o6t"]
 [ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_feb5d"]
 [ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="4_iywne"]
-[ext_resource type="Shader" uid="uid://de8scoecvns1c" path="res://shaders/squares.gdshader" id="4_lbhrr"]
+[ext_resource type="Material" uid="uid://blxolxuuli1r" path="res://materials/square.tres" id="5_iywne"]
+[ext_resource type="Script" uid="uid://cb8i225jm6ii8" path="res://scenes/floor.gd" id="6_p57ef"]
 
 [sub_resource type="FontVariation" id="FontVariation_p57ef"]
 base_font = ExtResource("4_iywne")
@@ -12,12 +13,8 @@ variation_opentype = {
 2003265652: 500
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iywne"]
-render_priority = 0
-shader = ExtResource("4_lbhrr")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_lnu2h"]
-material = SubResource("ShaderMaterial_iywne")
+material = ExtResource("5_iywne")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lnu2h"]
 
@@ -208,9 +205,16 @@ size = 12.0
 near = 2.0
 far = 21.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(26.996927, 0, 0, 0, 1.0000011, 0, 0, 0, 25.777443, 0, 0, 0)
 mesh = SubResource("PlaneMesh_lnu2h")
+script = ExtResource("6_p57ef")
+
+[node name="Title" type="Label" parent="Floor"]
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_p57ef")
+theme_override_font_sizes/font_size = 40
+text = "Upgrades"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_e2o6t")

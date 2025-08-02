@@ -1,5 +1,7 @@
 shader_type spatial;
 
+uniform float speed = 1.0;
+
 void fragment() {
     float dist = 0.0;
 	
@@ -16,10 +18,9 @@ void fragment() {
 		dist = -VERTEX.y + VERTEX.x;
 	}
 
-    if (int(dist - TIME * 2.0) % 5 == 0) {
+    if (int(dist - TIME * speed) % 5 == 0) {
         ALBEDO = vec3(0.4, 0.9, 0.5); 
     } else {
         ALBEDO = vec3(0.2, 0.8, 0.3);
     }
 }
-//Looks cool: dist = VERTEX.y * VERTEX.x;

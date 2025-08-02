@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://blxolxuuli1r"]
+
+[ext_resource type="Shader" uid="uid://de8scoecvns1c" path="res://shaders/squares.gdshader" id="1_mhilb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mhilb")
+shader_parameter/speed = 1.0

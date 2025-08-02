@@ -44,7 +44,7 @@ func _ready() -> void:
 const PATH = "user://"
 
 func reset() -> void:
-	money = 0
+	money = 100000
 	levels = {
 		"speed": 1,
 		"items": 1,

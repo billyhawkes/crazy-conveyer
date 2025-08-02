@@ -9,3 +9,4 @@ class ItemEvents:
 
 class GameEvents:
 	signal money_changed
+	signal speed_changed(value: float)
