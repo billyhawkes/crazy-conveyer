@@ -29,16 +29,33 @@ const TRACK_POSITIONS: Array[Vector3] = [
 
 @export var game_enabled = true
 
-var levels = {
+var levels := {
 	"speed": 1,
 	"value": 1
 }
 
 var max_levels := {
-	"speed": 9,
+	"speed": 10,
 	"value": 100
 }
 
+func get_value():
+	return {
+		"speed": 2 - ((levels.speed - 1) * 0.2),
+		"value": levels.value
+	}
+	
+func get_upgrade_cost():
+	return {
+		"speed": (levels.speed + 1) ** 3,
+		"value": (levels.value + 1) ** 2
+	}
+
+func reset() -> void:
+	levels = {
+		"speed": 1,
+		"value": 1
+	}
 
 var active := false
 
@@ -62,18 +79,7 @@ func render_ui() -> void:
 		speed_button.visible = false
 	if max_levels.value == levels.value:
 		value_button.visible = false
-	
-func get_value():
-	return {
-		"speed": 2 - ((levels.speed - 1) * 0.2),
-		"value": levels.value
-	}
-	
-func get_upgrade_cost():
-	return {
-		"speed": levels.speed ** 2,
-		"value": levels.value ** 2
-	}
+
 	
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event.is_action_pressed("press"):

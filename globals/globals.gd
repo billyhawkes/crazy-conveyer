@@ -14,11 +14,13 @@ var max_levels = {
 	"loop": 100
 }
 
+var prestige_items = 0
+
 func get_upgrade_cost():
 	return {
-		"speed": (levels.speed * 5) ** 2,
-		"items": (levels.items * 10) ** 2,
-		"loop": (levels.loop * 4) ** 2,
+		"speed": ((levels.speed + 1) * 2) ** 3,
+		"items": ((levels.items + 1) * 3) ** 3,
+		"loop": ((levels.loop + 2) * 2) ** 2,
 	}
 	
 func get_value():
@@ -36,18 +38,23 @@ func _ready() -> void:
 		saved_data = data
 		levels = data.levels
 		money = data.money
+		prestige_items = data.prestige_items
 	Events.game.money_changed.connect(save_game)
 
 const PATH = "user://"
 
-func clear_save() -> void:
-	saved_data = null
-	money = 1000000000
+func reset() -> void:
+	money = 0
 	levels = {
 		"speed": 1,
 		"items": 1,
 		"loop": 1
-	}
+	}	
+
+func clear_save() -> void:
+	saved_data = null
+	prestige_items = 0
+	reset()
 	DirAccess.remove_absolute(PATH)
 	
 func save_game() -> void:
@@ -57,6 +64,7 @@ func save_game() -> void:
 	for track in tracks:
 		track_values.append(track.levels)
 	file.store_string(JSON.stringify({
+		"prestige_items": prestige_items,
 		"money": money,
 		"levels": levels,
 		"tracks": track_values

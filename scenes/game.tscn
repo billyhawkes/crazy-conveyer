@@ -71,20 +71,18 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="UpgradeMenu" type="Control" parent="HUD"]
-custom_minimum_size = Vector2(500, 340)
 layout_mode = 1
+offset_right = 500.0
+offset_bottom = 340.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/UpgradeMenu"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = -1
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 520.0
-offset_bottom = 338.0
-
-[node name="PanelContainer" type="PanelContainer" parent="HUD/UpgradeMenu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_bottom = 358.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/UpgradeMenu/PanelContainer"]
 layout_mode = 2
@@ -150,16 +148,53 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 
-[node name="ExitButton" type="Button" parent="HUD"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -240.0
+offset_left = -465.0
 offset_top = 20.0
 offset_right = -20.0
-offset_bottom = 72.0
+offset_bottom = 204.0
 grow_horizontal = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HUD/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_p57ef")
+theme_override_font_sizes/font_size = 40
+text = "Prestige"
+
+[node name="PrestigeLabel" type="Label" parent="HUD/VBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "6 Items"
+
+[node name="PrestigeButton" type="Button" parent="HUD/VBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Store 6 items"
+
+[node name="PrestigeInfo" type="Label" parent="HUD/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "*Prestige increases value of tracks/loop (Requires 6 items)"
+
+[node name="ExitButton" type="Button" parent="HUD/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 8
 text = "Exit To Menu"
 
 [node name="ItemContainer" type="Node3D" parent="."]
@@ -189,4 +224,5 @@ shadow_enabled = true
 [connection signal="pressed" from="HUD/UpgradeMenu/PanelContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="HUD/UpgradeMenu/PanelContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]
 [connection signal="pressed" from="HUD/UpgradeMenu/PanelContainer/VBoxContainer/LoopUpgrade/LoopButton" to="HUD" method="_on_loop_button_pressed"]
-[connection signal="pressed" from="HUD/ExitButton" to="HUD" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HUD/VBoxContainer/PanelContainer/VBoxContainer/PrestigeButton" to="HUD" method="_on_prestige_button_pressed"]
+[connection signal="pressed" from="HUD/VBoxContainer/ExitButton" to="HUD" method="_on_exit_button_pressed"]

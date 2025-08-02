@@ -237,12 +237,12 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "Continue"
 
-[node name="StartButton" type="Button" parent="HUD/VBoxContainer"]
+[node name="NewButton" type="Button" parent="HUD/VBoxContainer"]
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
-text = "Start Game"
+text = "New Game"
 
 [node name="QuitButton" type="Button" parent="HUD/VBoxContainer"]
 custom_minimum_size = Vector2(700, 0)
@@ -252,5 +252,5 @@ theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [connection signal="pressed" from="HUD/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="HUD/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="HUD/VBoxContainer/NewButton" to="." method="_on_new_button_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

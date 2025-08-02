@@ -44,8 +44,9 @@ func update_track(new_track: Track) -> void:
 func process_item() -> void:
 	var processing = current_track.get_value()
 	if game_enabled:
-		Globals.money += processing.value
-		Events.items.processed.emit(processing.value)
+		var processing_value = processing.value + Globals.prestige_items
+		Globals.money += processing_value
+		Events.items.processed.emit(processing_value)
 		Events.game.money_changed.emit()
 		
 		# Random expand
@@ -55,15 +56,21 @@ func process_item() -> void:
 		
 		# Indicator of value
 		var indicator_text: String = ""
-		indicator_text = str("$", processing.value)
+		indicator_text = str("$", processing_value)
 		var indicator = Indicator.create(indicator_text)
 		add_child(indicator)
 		
+		# Loop
 		if current_track.get_index() == 0:
-			Globals.money += Globals.get_value().loop
+			var loop_value = Globals.get_value().loop + (Globals.prestige_items * 5)
+			Globals.money += loop_value
+			Events.game.money_changed.emit()
+			
+			# Wait and show indicator
 			await get_tree().create_timer(0.2).timeout
-			var loop_indicator = Indicator.create(str("$", Globals.get_value().loop))
+			var loop_indicator = Indicator.create(str("$", loop_value))
 			add_child(loop_indicator)
+			
 		await get_tree().create_timer(processing.speed).timeout
 	else:
 		await get_tree().create_timer(0.2).timeout

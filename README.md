@@ -32,8 +32,20 @@ Start with one tracks and unlock more
 - [x] Fix loop bonus price
 - [x] Fix button size changing on upgrade
 - [x] Fix using panels instead of panelcontainer
-- [ ] Test very large money
-- [ ] Prestiging (at what point?)
+- [x] Test very large money
+- [x] Fix loop not updating money label
+- [x] Balancing
+- [ ] Change background pace based on global speed
+- [ ] Prestiging (after 6 items, items are prestige points)
 - [ ] Music
 - [ ] Sound effects (processing, cash, button)
+- [ ] Mute music/sounds buttons
 - [ ] Play testing
+
+### Balancing
+- Everything should exponential even a little (slow down in end), allows prestiging to be worth it
+- Global upgrades should be more exponential
+- Speed should be more exponenetial than value
+
+Long run
+- Global are too slow (shorten first new item loop, loop/speed too much)

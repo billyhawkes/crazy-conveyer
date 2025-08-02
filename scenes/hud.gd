@@ -8,6 +8,8 @@ extends Control
 @onready var items_button: Button = %ItemsButton
 @onready var loop_label: Label = %LoopLabel
 @onready var loop_button: Button = %LoopButton
+@onready var prestige_label: Label = %PrestigeLabel
+@onready var prestige_button: Button = %PrestigeButton
 
 func _ready() -> void:
 	Events.game.money_changed.connect(_on_money_changed)
@@ -23,6 +25,14 @@ func render_ui() -> void:
 	speed_button.text = str("$", int(upgrade_cost.speed))
 	items_button.text = str("$", int(upgrade_cost.items))
 	loop_button.text = str("$", int(upgrade_cost.loop))
+	prestige_label.text = str(int(Globals.prestige_items), " Items")
+	prestige_button.text = str("Store ", int(Globals.levels.items), " Items")
+	if Globals.levels.items >= 6:
+		prestige_button.disabled = false
+	else:
+		prestige_button.disabled = true
+	if Globals.prestige_items == 0:
+		prestige_label.visible = false
 	if Globals.max_levels.speed == Globals.levels.speed:
 		speed_button.visible = false
 	if Globals.max_levels.items == Globals.levels.items:
@@ -62,3 +72,11 @@ func _on_loop_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _on_prestige_button_pressed() -> void:
+	if Globals.levels.items >= 6:
+		Globals.prestige_items += Globals.levels.items
+		Globals.reset()
+		for track in get_tree().get_nodes_in_group("Track"):
+			track.reset()
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
