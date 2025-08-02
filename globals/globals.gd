@@ -18,7 +18,7 @@ func get_upgrade_cost():
 	return {
 		"speed": (levels.speed * 5) ** 2,
 		"items": (levels.items * 10) ** 2,
-		"loop": (levels.speed * 2) ** 2,
+		"loop": (levels.loop * 4) ** 2,
 	}
 	
 func get_value():
@@ -42,7 +42,7 @@ const PATH = "user://"
 
 func clear_save() -> void:
 	saved_data = null
-	money = 0
+	money = 1000
 	levels = {
 		"speed": 1,
 		"items": 1,

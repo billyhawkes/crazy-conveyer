@@ -13,7 +13,7 @@ func _ready() -> void:
 	Events.game.money_changed.connect(_on_money_changed)
 	render_ui()
 	
-func render_ui() -> void: 
+func render_ui() -> void:
 	var value = Globals.get_value()
 	speed_label.text = str(value.speed, "s")
 	items_label.text = str(int(value.items))
@@ -23,6 +23,7 @@ func render_ui() -> void:
 	speed_button.text = str("$", int(upgrade_cost.speed))
 	items_button.text = str("$", int(upgrade_cost.items))
 	loop_button.text = str("$", int(upgrade_cost.loop))
+	print("LOOP", int(value.loop), int(upgrade_cost.loop)) 
 	if Globals.max_levels.speed == Globals.levels.speed:
 		speed_button.visible = false
 	if Globals.max_levels.items == Globals.levels.items:
