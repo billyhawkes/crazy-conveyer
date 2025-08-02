@@ -2,27 +2,22 @@ extends Control
 
 @onready var music_button: Button = %MusicButton
 @onready var sound_button: Button = %SoundButton
-
-const MUSIC_NOTE = preload("uid://c0ye0erxi3rvk")
-const MUSIC_OFF = preload("uid://bjim4eppfop47")
-const VOLUME_OFF = preload("uid://can6gjqcm5q8w")
-const VOLUME_UP = preload("uid://d4xw70lvl22q")
+@onready var music_on: TextureRect = %MusicOn
+@onready var music_off: TextureRect = %MusicOff
+@onready var volume_on: TextureRect = %VolumeOn
+@onready var volume_off: TextureRect = %VolumeOff
 
 func _ready() -> void:
 	set_music_icon(Audio.music_enabled)
 	set_sound_icon(Audio.sounds_enabled)
 
 func set_music_icon(on: bool) -> void:
-	if on:
-		music_button.icon = MUSIC_NOTE
-	else:
-		music_button.icon = MUSIC_OFF
+	music_on.visible = on
+	music_off.visible = !on
 
 func set_sound_icon(on: bool) -> void:
-	if on:
-		sound_button.icon = VOLUME_UP
-	else:
-		sound_button.icon = VOLUME_OFF
+	volume_on.visible = on
+	volume_off.visible = !on
 
 func _on_music_button_pressed() -> void:
 	var new_toggle = !Audio.music_enabled
@@ -32,7 +27,4 @@ func _on_music_button_pressed() -> void:
 func _on_sound_button_pressed() -> void:
 	var new_toggle = !Audio.sounds_enabled
 	Events.sound.toggle_sounds.emit()
-	if new_toggle:
-		sound_button.icon = VOLUME_UP
-	else:
-		sound_button.icon = VOLUME_OFF
+	set_sound_icon(new_toggle)
