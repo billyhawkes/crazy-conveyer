@@ -199,7 +199,7 @@ text = "Exit To Menu"
 [node name="TrackContainer" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 8.5, 8, 8.5)
+transform = Transform3D(0.7071067, -0.49999994, 0.49999994, 0, 0.7071067, 0.7071067, -0.7071067, -0.49999994, 0.49999994, 8.5, 8, 8.5)
 projection = 1
 size = 12.0
 near = 2.0

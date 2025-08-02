@@ -222,7 +222,9 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="HUD/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.101960786, 0.44313726, 0.101960786, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
 theme_override_fonts/font = SubResource("FontVariation_rtw2f")
 theme_override_font_sizes/font_size = 180
 text = "Crazy Conveyor"

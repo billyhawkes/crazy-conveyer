@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5lifti2svflr"]
+[gd_scene load_steps=4 format=3 uid="uid://b5lifti2svflr"]
 
 [ext_resource type="Script" uid="uid://cf7n6ufpt4f2x" path="res://scenes/indicator.gd" id="1_sgcln"]
 [ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="2_t3fs7"]
+
+[sub_resource type="FontVariation" id="FontVariation_t3fs7"]
+base_font = ExtResource("2_t3fs7")
+variation_opentype = {
+2003265652: 500
+}
 
 [node name="Indicator" type="Node3D"]
 script = ExtResource("1_sgcln")
@@ -9,8 +15,9 @@ script = ExtResource("1_sgcln")
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 1, 0)
 pixel_size = 0.001
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.101960786, 0.44313726, 0.101960786, 1)
+outline_modulate = Color(1, 1, 1, 1)
 text = "+1"
-font = ExtResource("2_t3fs7")
+font = SubResource("FontVariation_t3fs7")
 font_size = 500
-outline_size = 0
+outline_size = 80
