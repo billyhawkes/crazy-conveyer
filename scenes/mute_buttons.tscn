@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh7r42sv4j0g"]
+
+[ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="1_ibobf"]
+[ext_resource type="Script" uid="uid://cobbxl1c1y8xg" path="res://scenes/mute_buttons.gd" id="2_hreoh"]
+[ext_resource type="Texture2D" uid="uid://c0ye0erxi3rvk" path="res://assets/icons/music_note_48dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" id="2_vrp7q"]
+[ext_resource type="Texture2D" uid="uid://d4xw70lvl22q" path="res://assets/icons/volume_up_48dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" id="3_hreoh"]
+
+[node name="MuteButtons" type="HBoxContainer"]
+anchors_preset = -1
+offset_right = 156.0
+offset_bottom = 68.0
+theme = ExtResource("1_ibobf")
+script = ExtResource("2_hreoh")
+
+[node name="MusicButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("2_vrp7q")
+
+[node name="SoundButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("3_hreoh")
+
+[connection signal="pressed" from="MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]

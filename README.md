@@ -41,9 +41,9 @@ Start with one tracks and unlock more
 - [x] Make music slightly faster based on global speed
 - [x] Fix random text in top left
 - [x] Sound effects
+- [x] Icon
+- [x] Store page (4 screenshots, instructions, explanation of theme, etc)
 - [ ] Mute music/sounds buttons
-- [ ] Icon
-- [ ] Store page (4 screenshots, instructions, explanation of theme, etc)
 - [ ] Play testing
 
 ### Balancing

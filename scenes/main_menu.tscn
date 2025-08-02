@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dogcyvust6705"]
+[gd_scene load_steps=16 format=3 uid="uid://dogcyvust6705"]
 
 [ext_resource type="PackedScene" uid="uid://kmmopcj4rtju" path="res://scenes/track.tscn" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://c4mhhwatoxtxy" path="res://scenes/main_menu.gd" id="1_wu84c"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://dn33xear3vue4" path="res://shaders/triangles.gdshader" id="2_rtw2f"]
 [ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_bqqt6"]
 [ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="5_8ln24"]
+[ext_resource type="PackedScene" uid="uid://dh7r42sv4j0g" path="res://scenes/mute_buttons.tscn" id="7_oa1go"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa1go"]
 render_priority = 0
@@ -214,9 +215,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -711.5
-offset_top = -329.5
+offset_top = -389.5
 offset_right = 711.5
-offset_bottom = 249.5
+offset_bottom = 349.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -252,6 +253,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "Quit"
+
+[node name="MuteButtons" parent="HUD/VBoxContainer" instance=ExtResource("7_oa1go")]
+layout_mode = 2
+size_flags_horizontal = 4
 
 [connection signal="pressed" from="HUD/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/NewButton" to="." method="_on_new_button_pressed"]

@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Crazy Conveyor"
+config/description="Upgrade, Grow And Manage Cubes Around An Infinite Coveyor Of Profit"
 run/main_scene="uid://dogcyvust6705"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dsiyj5kkwpfxq"
 
 [autoload]
 
