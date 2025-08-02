@@ -1,9 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8thehv1woo4s"]
+[gd_scene load_steps=14 format=3 uid="uid://c8thehv1woo4s"]
 
 [ext_resource type="Script" uid="uid://cdfla3r2u631f" path="res://scenes/game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://denpngadj7tqh" path="res://scenes/hud.gd" id="2_e2o6t"]
 [ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_feb5d"]
+[ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="4_iywne"]
 [ext_resource type="Shader" uid="uid://de8scoecvns1c" path="res://shaders/squares.gdshader" id="4_lbhrr"]
+
+[sub_resource type="FontVariation" id="FontVariation_p57ef"]
+base_font = ExtResource("4_iywne")
+variation_opentype = {
+2003265652: 500
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iywne"]
 render_priority = 0
@@ -61,8 +68,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_right = -10.0
+offset_left = 20.0
+offset_right = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
@@ -100,6 +107,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_p57ef")
 theme_override_font_sizes/font_size = 40
 text = "Upgrades"
 

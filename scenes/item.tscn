@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cne1vytdqkooy"]
+[gd_scene load_steps=5 format=3 uid="uid://cne1vytdqkooy"]
 
 [ext_resource type="Script" uid="uid://dmfai8t6fgtgx" path="res://scenes/item.gd" id="1_tnite"]
+[ext_resource type="Shader" uid="uid://diadxwhiviik2" path="res://shaders/stripes.gdshader" id="2_s8enn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6muww"]
+render_priority = 0
+shader = ExtResource("2_s8enn")
 
 [sub_resource type="BoxMesh" id="BoxMesh_vpy52"]
+material = SubResource("ShaderMaterial_6muww")
 
 [node name="Item" type="Node3D"]
 script = ExtResource("1_tnite")
