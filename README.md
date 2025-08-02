@@ -30,8 +30,9 @@ Start with one tracks and unlock more
 - [x] Saving state
 - [x] Prevent overlapping items (even on save)
 - [x] Fix loop bonus price
+- [ ] Fix button size changing on upgrade
+- [ ] Test very large money
 - [ ] Prestiging (at what point?)
 - [ ] Music
 - [ ] Sound effects (processing, cash, button)
 - [ ] Play testing
-- [ ] Objectives? Levels?

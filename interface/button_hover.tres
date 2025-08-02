@@ -2,9 +2,9 @@
 
 [resource]
 content_margin_left = 10.0
-content_margin_top = 5.0
+content_margin_top = 10.0
 content_margin_right = 10.0
-content_margin_bottom = 5.0
+content_margin_bottom = 10.0
 bg_color = Color(0.11633789, 0.49405822, 0.11660462, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10

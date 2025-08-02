@@ -23,7 +23,6 @@ func render_ui() -> void:
 	speed_button.text = str("$", int(upgrade_cost.speed))
 	items_button.text = str("$", int(upgrade_cost.items))
 	loop_button.text = str("$", int(upgrade_cost.loop))
-	print("LOOP", int(value.loop), int(upgrade_cost.loop)) 
 	if Globals.max_levels.speed == Globals.levels.speed:
 		speed_button.visible = false
 	if Globals.max_levels.items == Globals.levels.items:

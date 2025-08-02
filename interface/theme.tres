@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="1_v3cvr"]
 [ext_resource type="StyleBox" uid="uid://cs1ly6x67y31k" path="res://interface/panel.tres" id="2_iq5ie"]
 [ext_resource type="StyleBox" uid="uid://bfunvbp86sblr" path="res://interface/button.tres" id="2_row08"]
-[ext_resource type="StyleBox" uid="uid://c8jcydp8j5q1x" path="res://interface/button_focus.tres" id="3_q65y7"]
+[ext_resource type="StyleBox" uid="uid://c8jcydp8j5q1x" path="res://interface/button_hover.tres" id="3_row08"]
 
 [sub_resource type="FontVariation" id="FontVariation_row08"]
 base_font = ExtResource("1_v3cvr")
@@ -18,8 +18,8 @@ Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 Button/font_sizes/font_size = 32
 Button/fonts/font = SubResource("FontVariation_row08")
 Button/styles/disabled = ExtResource("2_row08")
-Button/styles/focus = ExtResource("3_q65y7")
-Button/styles/hover = ExtResource("3_q65y7")
+Button/styles/focus = ExtResource("2_row08")
+Button/styles/hover = ExtResource("3_row08")
 Button/styles/normal = ExtResource("2_row08")
 Button/styles/pressed = ExtResource("2_row08")
 HBoxContainer/constants/separation = 20

@@ -44,16 +44,18 @@ func update_track(new_track: Track) -> void:
 func process_item() -> void:
 	var processing = current_track.get_value()
 	if game_enabled:
-		var indicator_text: String = ""
 		Globals.money += processing.value
 		Events.items.processed.emit(processing.value)
 		Events.game.money_changed.emit()
-		indicator_text = str("$", processing.value)
 		
+		# Random expand
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector3(1.15 + (randi() % 10 * 0.05), 1.0, 1.15 + (randi() % 10 * 0.05)), Globals.get_value().speed / 5).set_trans(Tween.TRANS_BOUNCE)
 		tween.tween_property(self, "scale", Vector3(1.0, 1.0, 1.0), Globals.get_value().speed / 5).set_trans(Tween.TRANS_BOUNCE)
 		
+		# Indicator of value
+		var indicator_text: String = ""
+		indicator_text = str("$", processing.value)
 		var indicator = Indicator.create(indicator_text)
 		add_child(indicator)
 		
