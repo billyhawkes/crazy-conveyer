@@ -151,6 +151,18 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 
+[node name="ExitButton" type="Button" parent="HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 72.0
+grow_horizontal = 0
+text = "Exit To Menu"
+
 [node name="ItemContainer" type="Node3D" parent="."]
 
 [node name="TrackContainer" type="Node3D" parent="."]
@@ -178,3 +190,4 @@ shadow_enabled = true
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]
 [connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade/LoopButton" to="HUD" method="_on_loop_button_pressed"]
+[connection signal="pressed" from="HUD/ExitButton" to="HUD" method="_on_exit_button_pressed"]

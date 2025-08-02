@@ -47,8 +47,9 @@ func process_item() -> void:
 			await get_tree().create_timer(0.2).timeout
 			var loop_indicator = Indicator.create(str("$", Globals.get_value().loop))
 			add_child(loop_indicator)
-			
-	await get_tree().create_timer(processing.speed).timeout
+		await get_tree().create_timer(processing.speed).timeout
+	else:
+		await get_tree().create_timer(0.2).timeout
 	processed = true
 	
 static func create(track: Track) -> Item:

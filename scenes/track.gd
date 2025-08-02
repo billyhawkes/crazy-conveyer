@@ -27,24 +27,26 @@ const TRACK_POSITIONS: Array[Vector3] = [
 	Vector3(1.0, 0.0, 0.0),
 ]
 
-@export var custom_position = false
+@export var game_enabled = true
 
-var level = {
+var levels = {
 	"speed": 1,
 	"value": 1
 }
 
-var max_levels = {
+var max_levels := {
 	"speed": 9,
 	"value": 100
 }
 
 
-var active = false
+var active := false
 
 func _ready() -> void:
+	if Globals.saved_data && game_enabled:
+		levels = Globals.saved_data.tracks[get_index()]
 	var index = get_index()
-	if !custom_position:
+	if game_enabled:
 		global_position = TRACK_POSITIONS[index] * 2
 	upgrade_menu.visible = false
 	render_ui()
@@ -53,24 +55,24 @@ func render_ui() -> void:
 	title.text = str("Track ", get_index() + 1)
 	var processing = get_value()
 	speed_label.text = str(processing.speed, "s")
-	value_label.text = str("$", processing.value)
-	speed_button.text = str("$", get_upgrade_cost().speed)
-	value_button.text = str("$", get_upgrade_cost().value)
-	if max_levels.speed == level.speed:
+	value_label.text = str("$", int(processing.value))
+	speed_button.text = str("$", int(get_upgrade_cost().speed))
+	value_button.text = str("$", int(get_upgrade_cost().value))
+	if max_levels.speed == levels.speed:
 		speed_button.visible = false
-	if max_levels.value == level.value:
+	if max_levels.value == levels.value:
 		value_button.visible = false
 	
 func get_value():
 	return {
-		"speed": 2 - ((level.speed - 1) * 0.2),
-		"value": level.value
+		"speed": 2 - ((levels.speed - 1) * 0.2),
+		"value": levels.value
 	}
 	
 func get_upgrade_cost():
 	return {
-		"speed": level.speed ** 2,
-		"value": level.value ** 2
+		"speed": levels.speed ** 2,
+		"value": levels.value ** 2
 	}
 	
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
@@ -80,6 +82,8 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 		upgrade_menu.visible = true
 		
 func _process(_delta: float) -> void:
+	if !game_enabled:
+		upgrade_menu.visible = false
 	if upgrade_menu.visible:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "scale", Vector3(1.1, 1.1, 1.1), 0.08).set_trans(Tween.TRANS_BOUNCE)
@@ -96,7 +100,7 @@ func _on_speed_button_pressed() -> void:
 	var cost = get_upgrade_cost().speed
 	if Globals.money >= cost:
 		Globals.money -= cost
-		level.speed += 1
+		levels.speed += 1
 		Events.game.money_changed.emit()
 		render_ui()
 
@@ -104,7 +108,7 @@ func _on_value_button_pressed() -> void:
 	var cost = get_upgrade_cost().value
 	if Globals.money >= cost:
 		Globals.money -= cost
-		level.value += 1
+		levels.value += 1
 		Events.game.money_changed.emit()
 		render_ui()
 	

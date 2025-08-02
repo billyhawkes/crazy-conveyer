@@ -62,131 +62,131 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.17392)
 
 [node name="Track" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track2" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track3" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track4" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track5" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track6" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track7" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track8" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track9" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track10" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
-custom_position = true
+game_enabled = false
 
 [node name="Track11" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
-custom_position = true
+game_enabled = false
 
 [node name="Track12" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4)
-custom_position = true
+game_enabled = false
 
 [node name="Track13" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
-custom_position = true
+game_enabled = false
 
 [node name="Track14" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 8)
-custom_position = true
+game_enabled = false
 
 [node name="Track15" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 10)
-custom_position = true
+game_enabled = false
 
 [node name="Track16" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 12)
-custom_position = true
+game_enabled = false
 
 [node name="Track18" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track19" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track20" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track21" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track22" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track23" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track24" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track25" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track26" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track27" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 14)
-custom_position = true
+game_enabled = false
 
 [node name="Track28" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 12)
-custom_position = true
+game_enabled = false
 
 [node name="Track29" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 10)
-custom_position = true
+game_enabled = false
 
 [node name="Track30" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 8)
-custom_position = true
+game_enabled = false
 
 [node name="Track31" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 6)
-custom_position = true
+game_enabled = false
 
 [node name="Track33" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 4)
-custom_position = true
+game_enabled = false
 
 [node name="Track34" parent="TrackContainer" instance=ExtResource("1_l6cm7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 2)
-custom_position = true
+game_enabled = false
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -223,6 +223,14 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
+[node name="ContinueButton" type="Button" parent="HUD/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Continue"
+
 [node name="StartButton" type="Button" parent="HUD/VBoxContainer"]
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
@@ -237,5 +245,6 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
+[connection signal="pressed" from="HUD/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="HUD/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

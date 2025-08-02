@@ -26,7 +26,7 @@ Start with one tracks and unlock more
 - [x] Min speed should be 0.1
 - [x] UI
 - [x] Improve art
-- [ ] Main menu
+- [x] Main menu
 - [ ] Saving state
 - [ ] Prevent overlapping items
 - [ ] Prestiging (at what point?)

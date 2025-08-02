@@ -7,7 +7,8 @@ const TRACK = preload("uid://kmmopcj4rtju")
 
 func _ready() -> void:
 	spawn_tracks()
-	spawn_item()	
+	for _index in Globals.levels.items:
+		spawn_item()	
 	Events.items.create.connect(_on_create_item)
 	
 func _on_create_item() -> void:

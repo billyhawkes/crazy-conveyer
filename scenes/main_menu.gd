@@ -1,10 +1,21 @@
 extends Node3D
 
-const GAME = preload("uid://c8thehv1woo4s")
+@onready var continue_button: Button = %ContinueButton
+
+func _ready() -> void:
+	if Globals.load_game() != null:
+		continue_button.visible = true
+	else:
+		continue_button.visible = false
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_packed(GAME)
+	Globals.clear_save()
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_continue_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/game.tscn")

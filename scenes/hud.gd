@@ -16,12 +16,13 @@ func _ready() -> void:
 func render_ui() -> void: 
 	var value = Globals.get_value()
 	speed_label.text = str(value.speed, "s")
-	items_label.text = str(value.items)
-	loop_label.text = str(value.loop)
+	items_label.text = str(int(value.items))
+	loop_label.text = str(int(value.loop))
+	money_label.text = str("$", int(Globals.money))
 	var upgrade_cost = Globals.get_upgrade_cost()
-	speed_button.text = str("$", upgrade_cost.speed)
-	items_button.text = str("$", upgrade_cost.items)
-	loop_button.text = str("$", upgrade_cost.loop)
+	speed_button.text = str("$", int(upgrade_cost.speed))
+	items_button.text = str("$", int(upgrade_cost.items))
+	loop_button.text = str("$", int(upgrade_cost.loop))
 	if Globals.max_levels.speed == Globals.levels.speed:
 		speed_button.visible = false
 	if Globals.max_levels.items == Globals.levels.items:
@@ -57,3 +58,7 @@ func _on_loop_button_pressed() -> void:
 		Globals.levels.loop += 1
 		Events.game.money_changed.emit()
 		render_ui()
+
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
