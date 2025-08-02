@@ -42,7 +42,7 @@ const PATH = "user://"
 
 func clear_save() -> void:
 	saved_data = null
-	money = 1000
+	money = 0
 	levels = {
 		"speed": 1,
 		"items": 1,

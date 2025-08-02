@@ -1,12 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://dogcyvust6705"]
+[gd_scene load_steps=15 format=3 uid="uid://dogcyvust6705"]
 
 [ext_resource type="PackedScene" uid="uid://kmmopcj4rtju" path="res://scenes/track.tscn" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://c4mhhwatoxtxy" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="PackedScene" uid="uid://cne1vytdqkooy" path="res://scenes/item.tscn" id="2_ekxnf"]
+[ext_resource type="Shader" uid="uid://dn33xear3vue4" path="res://shaders/triangles.gdshader" id="2_rtw2f"]
 [ext_resource type="Theme" uid="uid://dmcn8ld0wnxje" path="res://interface/theme.tres" id="3_bqqt6"]
 [ext_resource type="FontFile" uid="uid://bcoio51qypcjt" path="res://assets/Lora-VariableFont_wght.ttf" id="5_8ln24"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oa1go"]
+render_priority = 0
+shader = ExtResource("2_rtw2f")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_vue75"]
+material = SubResource("ShaderMaterial_oa1go")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vue75"]
 
@@ -26,8 +32,9 @@ sky = SubResource("Sky_p57ef")
 [sub_resource type="FontVariation" id="FontVariation_rtw2f"]
 base_font = ExtResource("5_8ln24")
 variation_opentype = {
-2003265652: 500
+2003265652: 700
 }
+spacing_bottom = 50
 
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_wu84c")
@@ -215,15 +222,12 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="HUD/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_rtw2f")
 theme_override_font_sizes/font_size = 180
 text = "Crazy Conveyor"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BoxContainer" type="BoxContainer" parent="HUD/VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
 
 [node name="ContinueButton" type="Button" parent="HUD/VBoxContainer"]
 unique_name_in_owner = true
