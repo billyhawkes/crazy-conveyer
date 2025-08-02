@@ -48,7 +48,7 @@ mouse_filter = 2
 theme = ExtResource("3_feb5d")
 script = ExtResource("2_e2o6t")
 
-[node name="MoneyPanel" type="Panel" parent="HUD"]
+[node name="MoneyPanel" type="PanelContainer" parent="HUD"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -56,19 +56,13 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -320.0
-offset_top = -120.0
+offset_top = -143.0
 offset_right = -20.0
 offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/MoneyPanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MoneyLabel" type="Label" parent="HUD/MoneyPanel/MarginContainer"]
+[node name="MoneyLabel" type="Label" parent="HUD/MoneyPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
@@ -84,7 +78,7 @@ offset_top = 20.0
 offset_right = 520.0
 offset_bottom = 338.0
 
-[node name="Panel" type="Panel" parent="HUD/UpgradeMenu"]
+[node name="PanelContainer" type="PanelContainer" parent="HUD/UpgradeMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,74 +86,66 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD/UpgradeMenu/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/UpgradeMenu/PanelContainer"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = SubResource("FontVariation_p57ef")
 theme_override_font_sizes/font_size = 40
 text = "Upgrades"
 
-[node name="SpeedUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+[node name="SpeedUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+[node name="Label" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/SpeedUpgrade"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Speed"
 
-[node name="SpeedLabel" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+[node name="SpeedLabel" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/SpeedUpgrade"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Value"
 
-[node name="SpeedButton" type="Button" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade"]
+[node name="SpeedButton" type="Button" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/SpeedUpgrade"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 
-[node name="ItemsUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+[node name="ItemsUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade"]
+[node name="Label" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/ItemsUpgrade"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Items"
 
-[node name="ItemsLabel" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade"]
+[node name="ItemsLabel" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/ItemsUpgrade"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Value"
 
-[node name="ItemsButton" type="Button" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade"]
+[node name="ItemsButton" type="Button" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/ItemsUpgrade"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 
-[node name="LoopUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer"]
+[node name="LoopUpgrade" type="HBoxContainer" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade"]
+[node name="Label" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/LoopUpgrade"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Loop Bonus"
 
-[node name="LoopLabel" type="Label" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade"]
+[node name="LoopLabel" type="Label" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/LoopUpgrade"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Value"
 
-[node name="LoopButton" type="Button" parent="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade"]
+[node name="LoopButton" type="Button" parent="HUD/UpgradeMenu/PanelContainer/VBoxContainer/LoopUpgrade"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
@@ -200,7 +186,7 @@ light_energy = 0.1
 light_cull_mask = 4293918722
 shadow_enabled = true
 
-[connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
-[connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]
-[connection signal="pressed" from="HUD/UpgradeMenu/Panel/MarginContainer/VBoxContainer/LoopUpgrade/LoopButton" to="HUD" method="_on_loop_button_pressed"]
+[connection signal="pressed" from="HUD/UpgradeMenu/PanelContainer/VBoxContainer/SpeedUpgrade/SpeedButton" to="HUD" method="_on_speed_button_pressed"]
+[connection signal="pressed" from="HUD/UpgradeMenu/PanelContainer/VBoxContainer/ItemsUpgrade/ItemsButton" to="HUD" method="_on_items_button_pressed"]
+[connection signal="pressed" from="HUD/UpgradeMenu/PanelContainer/VBoxContainer/LoopUpgrade/LoopButton" to="HUD" method="_on_loop_button_pressed"]
 [connection signal="pressed" from="HUD/ExitButton" to="HUD" method="_on_exit_button_pressed"]
