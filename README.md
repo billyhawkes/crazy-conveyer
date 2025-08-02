@@ -38,8 +38,10 @@ Start with one tracks and unlock more
 - [x] Prestiging (after 6 items)
 - [x] Change background pace based on global speed
 - [x] Music
-- [ ] Make music slightly faster based on global speed
-- [ ] Sound effects (processing, cash, button)
+- [x] Make music slightly faster based on global speed
+- [x] Fix random text in top left
+- [x] Sound effects
+- [ ] Icon
 - [ ] Mute music/sounds buttons
 - [ ] Play testing
 

@@ -83,6 +83,7 @@ func render_ui() -> void:
 	
 func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event.is_action_pressed("press"):
+		Audio.play_click()
 		close_all()
 		active = true
 		upgrade_menu.visible = true
@@ -99,10 +100,12 @@ func _process(_delta: float) -> void:
 
 
 func _on_close_button_pressed() -> void:
+	Audio.play_click()
 	active = false
 	upgrade_menu.visible = false
 
 func _on_speed_button_pressed() -> void:
+	Audio.play_click()
 	var cost = get_upgrade_cost().speed
 	if Globals.money >= cost:
 		Globals.money -= cost
@@ -111,6 +114,7 @@ func _on_speed_button_pressed() -> void:
 		render_ui()
 
 func _on_value_button_pressed() -> void:
+	Audio.play_click()
 	var cost = get_upgrade_cost().value
 	if Globals.money >= cost:
 		Globals.money -= cost
@@ -137,5 +141,5 @@ func get_active_track() -> Track:
 func close_all() -> void:
 	var other_tracks = get_parent().get_children()
 	for track in other_tracks:
-		track._on_close_button_pressed()
+		track.upgrade_menu.visible = false
 		track.active = false

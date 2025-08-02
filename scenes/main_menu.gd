@@ -9,13 +9,16 @@ func _ready() -> void:
 		continue_button.visible = false
 
 func _on_quit_button_pressed() -> void:
+	Audio.play_click()
 	get_tree().quit()
 
 
 func _on_continue_button_pressed() -> void:
+	Audio.play_click()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_new_button_pressed() -> void:
+	Audio.play_click()
 	Globals.clear_save()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")

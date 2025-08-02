@@ -36,6 +36,7 @@ func _ready() -> void:
 
 func update_track(new_track: Track) -> void:
 	state = State.Moving
+	Audio.play_track()
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", new_track.global_position, Globals.get_value().speed).set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(process_item).set_delay(Globals.get_value().speed)
@@ -44,6 +45,7 @@ func update_track(new_track: Track) -> void:
 func process_item() -> void:
 	var processing = current_track.get_value()
 	if game_enabled:
+		Audio.play_process()
 		var processing_value = processing.value + Globals.prestige_items
 		Globals.money += processing_value
 		Events.items.processed.emit(processing_value)

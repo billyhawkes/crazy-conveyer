@@ -210,12 +210,6 @@ transform = Transform3D(26.996927, 0, 0, 0, 1.0000011, 0, 0, 0, 25.777443, 0, 0,
 mesh = SubResource("PlaneMesh_lnu2h")
 script = ExtResource("6_p57ef")
 
-[node name="Title" type="Label" parent="Floor"]
-size_flags_horizontal = 3
-theme_override_fonts/font = SubResource("FontVariation_p57ef")
-theme_override_font_sizes/font_size = 40
-text = "Upgrades"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_e2o6t")
 

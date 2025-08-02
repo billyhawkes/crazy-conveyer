@@ -45,6 +45,7 @@ func _on_money_changed() -> void:
 	money_label.text = str("$", Globals.money)
 
 func _on_speed_button_pressed() -> void:
+	Audio.play_click()
 	var cost = Globals.get_upgrade_cost().speed
 	if Globals.money >= cost:
 		Globals.money -= cost
@@ -54,6 +55,7 @@ func _on_speed_button_pressed() -> void:
 		render_ui()
 
 func _on_items_button_pressed() -> void:
+	Audio.play_click()
 	var cost = Globals.get_upgrade_cost().items
 	if Globals.money >= cost:
 		Globals.money -= cost
@@ -63,6 +65,7 @@ func _on_items_button_pressed() -> void:
 		render_ui()
 
 func _on_loop_button_pressed() -> void:
+	Audio.play_click()
 	var cost = Globals.get_upgrade_cost().loop
 	if Globals.money >= cost:
 		Globals.money -= cost
@@ -72,9 +75,11 @@ func _on_loop_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
+	Audio.play_click()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_prestige_button_pressed() -> void:
+	Audio.play_click()
 	if Globals.levels.items >= 6:
 		Globals.prestige_items += Globals.levels.items
 		Globals.reset()
