@@ -10,7 +10,7 @@ var levels = {
 
 var max_levels = {
 	"speed": 9,
-	"items": 10,
+	"items": 11,
 	"loop": 100
 }
 

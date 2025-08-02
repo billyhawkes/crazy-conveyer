@@ -27,8 +27,9 @@ Start with one tracks and unlock more
 - [x] UI
 - [x] Improve art
 - [x] Main menu
-- [ ] Saving state
-- [ ] Prevent overlapping items
+- [x] Saving state
+- [ ] Prevent overlapping items (even on save)
+- [ ] Fix loop bonus price
 - [ ] Prestiging (at what point?)
 - [ ] Music
 - [ ] Sound effects (processing, cash, button)

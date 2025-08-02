@@ -6,21 +6,36 @@ const ITEM = preload("uid://cne1vytdqkooy")
 @export var current_track: Track
 @export var game_enabled = true
 
-var processed := true
+enum State {
+	Waiting,
+	Processing,
+	Done,
+	Moving,
+}
+
+var state := State.Waiting
 
 func _process(_delta: float) -> void:
-	if processed: 
+	if state == State.Waiting || state == State.Done: 
 		var track_length = current_track.get_parent().get_child_count()
 		var next_track_index = current_track.get_index() + 1
 		if next_track_index == track_length:
 			next_track_index = 0
-		update_track(current_track.get_parent().get_child(next_track_index))	
-		processed = false
+		var next_track = current_track.get_parent().get_child(next_track_index)
+		var items = get_parent().get_children()
+		var is_next_track_full
+		for item in items:
+			if item.current_track == next_track:
+				is_next_track_full = true
+				state = State.Waiting
+		if !is_next_track_full:
+			update_track(next_track)	
 
 func _ready() -> void:
 	global_position = current_track.global_position
 
 func update_track(new_track: Track) -> void:
+	state = State.Moving
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", new_track.global_position, Globals.get_value().speed).set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(process_item).set_delay(Globals.get_value().speed)
@@ -50,7 +65,7 @@ func process_item() -> void:
 		await get_tree().create_timer(processing.speed).timeout
 	else:
 		await get_tree().create_timer(0.2).timeout
-	processed = true
+	state = State.Done
 	
 static func create(track: Track) -> Item:
 	var new_item = ITEM.instantiate()

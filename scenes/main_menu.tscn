@@ -52,9 +52,11 @@ light_energy = 0.1
 light_cull_mask = 4293918722
 shadow_enabled = true
 
-[node name="Item" parent="." node_paths=PackedStringArray("current_track") instance=ExtResource("2_ekxnf")]
+[node name="ItemContainer" type="Node3D" parent="."]
+
+[node name="Item" parent="ItemContainer" node_paths=PackedStringArray("current_track") instance=ExtResource("2_ekxnf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -6)
-current_track = NodePath("../TrackContainer/Track")
+current_track = NodePath("../../TrackContainer/Track")
 game_enabled = false
 
 [node name="TrackContainer" type="Node3D" parent="."]
