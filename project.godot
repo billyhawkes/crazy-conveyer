@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*res://globals/events.gd"
 Globals="*res://globals/globals.gd"
+Audio="*res://audio/Audio.tscn"
 
 [debug]
 

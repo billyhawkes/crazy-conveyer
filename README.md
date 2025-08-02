@@ -36,8 +36,9 @@ Start with one tracks and unlock more
 - [x] Fix loop not updating money label
 - [x] Balancing
 - [x] Prestiging (after 6 items)
-- [ ] Change background pace based on global speed
-- [ ] Music
+- [x] Change background pace based on global speed
+- [x] Music
+- [ ] Make music slightly faster based on global speed
 - [ ] Sound effects (processing, cash, button)
 - [ ] Mute music/sounds buttons
 - [ ] Play testing

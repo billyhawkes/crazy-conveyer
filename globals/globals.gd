@@ -40,6 +40,7 @@ func _ready() -> void:
 		money = data.money
 		prestige_items = data.prestige_items
 	Events.game.money_changed.connect(save_game)
+	Events.game.speed_changed.emit(levels.speed)
 
 const PATH = "user://"
 
@@ -49,7 +50,9 @@ func reset() -> void:
 		"speed": 1,
 		"items": 1,
 		"loop": 1
-	}	
+	}
+	Events.game.money_changed.emit()
+	Events.game.speed_changed.emit(levels.speed)
 
 func clear_save() -> void:
 	saved_data = null
