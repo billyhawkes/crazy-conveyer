@@ -43,8 +43,10 @@ Start with one tracks and unlock more
 - [x] Sound effects
 - [x] Icon
 - [x] Mute music/sounds buttons
-- [ ] Store page (4 screenshots, instructions, explanation of theme, etc)
-- [ ] Play testing
+- [x] Store page
+- [x] Play testing
+- [x] Make easier at start, improve exponentials
+- [x] Bonus marker
 
 ### Balancing
 - Everything should exponential even a little (slow down in end), allows prestiging to be worth it

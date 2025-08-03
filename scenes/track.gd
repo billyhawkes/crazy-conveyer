@@ -8,7 +8,7 @@ class_name Track
 @onready var value_button: Button = %ValueButton
 @onready var value_label: Label = %ValueLabel
 @onready var title: Label = %Title
-
+@onready var bonus_label: Label3D = %BonusLabel
 const TRACK_POSITIONS: Array[Vector3] = [
 	Vector3(0.0, 0.0, 0.0),
 	Vector3(0.0, 0.0, 1.0),
@@ -47,8 +47,8 @@ func get_value():
 	
 func get_upgrade_cost():
 	return {
-		"speed": (levels.speed + 1) ** 3,
-		"value": (levels.value + 1) ** 2
+		"speed": 8 * (levels.speed ** 2),
+		"value": 4 * int(levels.value ** 1.5)
 	}
 
 func reset() -> void:
@@ -65,6 +65,8 @@ func _ready() -> void:
 	var index = get_index()
 	if game_enabled:
 		global_position = TRACK_POSITIONS[index] * 2
+		if index == 0:
+			bonus_label.visible = true
 	upgrade_menu.visible = false
 	render_ui()
 

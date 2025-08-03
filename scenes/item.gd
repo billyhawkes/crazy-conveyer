@@ -58,7 +58,7 @@ func process_item() -> void:
 		
 		# Indicator of value
 		var indicator_text: String = ""
-		indicator_text = str("$", processing_value)
+		indicator_text = str("$", int(processing_value))
 		var indicator = Indicator.create(indicator_text)
 		add_child(indicator)
 		
@@ -70,7 +70,7 @@ func process_item() -> void:
 			
 			# Wait and show indicator
 			await get_tree().create_timer(0.2).timeout
-			var loop_indicator = Indicator.create(str("$", loop_value))
+			var loop_indicator = Indicator.create(str("$", int(loop_value)))
 			add_child(loop_indicator)
 			
 		await get_tree().create_timer(processing.speed).timeout

@@ -20,4 +20,4 @@ outline_modulate = Color(1, 1, 1, 1)
 text = "+1"
 font = SubResource("FontVariation_t3fs7")
 font_size = 500
-outline_size = 80
+outline_size = 100

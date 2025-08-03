@@ -18,9 +18,9 @@ var prestige_items = 0
 
 func get_upgrade_cost():
 	return {
-		"speed": ((levels.speed + 1) * 2) ** 3,
-		"items": ((levels.items + 1) * 3) ** 3,
-		"loop": ((levels.loop + 2) * 2) ** 2,
+		"speed": 50 * (levels.speed ** 3),
+		"items": 100 * (levels.items ** 3),
+		"loop": 20 * (levels.loop ** 2),
 	}
 	
 func get_value():

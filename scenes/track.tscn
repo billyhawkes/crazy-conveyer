@@ -97,6 +97,15 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 
+[node name="BonusLabel" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.70710677, -0.70710677, -3.090862e-08, 0, -4.371139e-08, 1, -0.70710677, -0.70710677, -3.090862e-08, 0, 0.5854953, 0)
+visible = false
+outline_modulate = Color(0.101960786, 0.44313726, 0.101960786, 1)
+text = "Bonus"
+font_size = 100
+outline_size = 20
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="UpgradeMenu/PanelContainer/VBoxContainer/Header/CloseButton" to="." method="_on_close_button_pressed"]
