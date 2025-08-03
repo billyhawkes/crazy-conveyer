@@ -85,4 +85,5 @@ func _on_prestige_button_pressed() -> void:
 		Globals.reset()
 		for track in get_tree().get_nodes_in_group("Track"):
 			track.reset()
+		Globals.save_game()
 		get_tree().change_scene_to_file("res://scenes/game.tscn")

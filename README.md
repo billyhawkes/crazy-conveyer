@@ -47,6 +47,7 @@ Start with one tracks and unlock more
 - [x] Play testing
 - [x] Make easier at start, improve exponentials
 - [x] Bonus marker
+- [ ] Fix prestige not refreshing tracks
 
 ### Balancing
 - Everything should exponential even a little (slow down in end), allows prestiging to be worth it
